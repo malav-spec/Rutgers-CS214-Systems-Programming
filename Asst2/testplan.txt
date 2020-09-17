@@ -1,0 +1,87 @@
+Name: Malav Doshi, Herik Patel
+Systems Programming
+Professor Francisco 
+Assignment 1
+
+Test Plan
+The in put file name is “ex.txt”
+Test1:  ./a.out -c ./ex.txt
+ foo.txt:  hello, i, am,    ,dan
+Output1: No output but creates a "ex.txt.hcz" file with the Huffman code in it.
+  
+---------------------------------------------------------------
+Test2: ./a.out -q ./ex.txt
+ex.txt: i  hg	fed
+cba 
+Output2: 
+Error: Not a vlaid flag
+
+---------------------------------------------------------------
+Test3: ./a.out -d ./ex.txt.hcz
+ex.txt: i  h g	f,ed
+cba 
+Output3: Outputs the original ex.txt file with all its content.
+---------------------------------------------------------------
+Test4: ./a.out -b ./foo1.txt
+Output4: Builds a huffmanCodebook. 
+---------------------------------------------------------------
+Test5: ./a.out -q ./foo.txt -p
+Output5: Error: Not a valid flag 
+---------------------------------------------------------------
+Test6: ./a.out -d -b ./foo.txt
+foo.txt: hello world
+Output6: Error: Not a valid flag combination
+
+---------------------------------------------------------------
+Test7: ./a.out -d ./ex.txt
+ex.txt: 9,2,8,7,6,3,4,,  ,,5,5,0,1
+Output7: 
+Error: No Codebook given
+
+---------------------------------------------------------------
+Test8: ./a.out -d ./foo.txt
+foo.txt: hello world
+Output8: 
+Error: Not a .hcz file type
+---------------------------------------------------------------
+Test9: ./a.out -c -b ./foo.txt
+foo.txt: hello world
+Output9:
+Builds the HuffmanCodebook for foo.txt and also compressed file 
+---------------------------------------------------------------
+Test10: ./a.out -R -c ./testdir
+testdir: test1	test.txt	a.txt
+test1: test_1.txt
+Output10: 
+Recursively  builds all the compressed files in the directory 
+and sub directory
+---------------------------------------------------------------
+Test11: ./a.out -R -d ./testdir ./HuffmanCodebook
+testdir: test1	test.txt	a.txt
+test1: test_1.txt
+Output10: 
+Recursively  decompresses all the files in the directory 
+and sub directory
+---------------------------------------------------------------
+Test12: ./a.out -c -d ./foo.txt
+foo.txt: hello world
+Output10: 
+First compresses the file, builds a codebook and then
+decompresses the file.
+---------------------------------------------------------------
+Test13: ./a.out -c -d ./foo.txt ./ex.txt
+foo.txt: hello world
+Output10: 
+Error: Too many arguments
+
+---------------------------------------------------------------
+Test14: ./a.out -R ./foo.txt ./ex.txt
+foo.txt: hello world
+Output10: 
+Error: No other flag with R
+
+---------------------------------------------------------------
+
+
+
+
