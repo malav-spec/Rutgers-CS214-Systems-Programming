@@ -1,0 +1,101 @@
+Name: Malav Doshi, Herik Patel
+Systems Programming
+Professor Francisco 
+Assignment 0
+
+Test Plan
+The in put file name is “foo.txt”
+Test1:  ./a.out -i ./foo.txt
+ foo.txt:  hello, i, am,    ,dan
+ Output1: 
+am
+dan
+hello
+i 
+---------------------------------------------------------------
+Test2: ./a.out -q ./foo.txt
+foo.txt: i,  h,g,	f,e,d,
+c,b,a 
+Output2: 
+a
+b
+c
+d
+e
+f
+g
+h
+i
+---------------------------------------------------------------
+Test3: ./a.out -w ./foo.txt
+foo.txt: i,  h,g,	f,e,d,
+c,b,a 
+Output3: Fatal Error: -w not a valid sort flag
+---------------------------------------------------------------
+Test4: ./a.out -q ./foo1.txt
+Output4: Fatal error: file does not exist
+---------------------------------------------------------------
+Test5: ./a.out -q ./foo.txt -p
+Output5: Fatal Error: expected two arguments, had 4
+---------------------------------------------------------------
+Test6: ./a.out -i ./foo.txt
+foo.txt: (Empty)
+Output6: Warning: empty file
+[ The program hasn’t exited but since it does not have anything to sort it returned normally]
+---------------------------------------------------------------
+Test7: ./a.out -q ./foo.txt
+foo.txt: 9,2,8,7,6,3,4,,  ,,5,5,0,1
+Output7: 
+0
+1
+2
+4
+5
+3
+5
+6
+7
+8
+9
+---------------------------------------------------------------
+Test8: ./a.out -i ./foo.txt
+foo.txt: 9,2,8,7,-6,3,-4,,  ,,5,5,0,-1
+Output8: 
+-6
+-4
+-1
+0
+2
+3
+5
+5
+7
+8
+9
+---------------------------------------------------------------
+Test9: ./a.out -i ./foo.txt
+foo.txt: 9,2,8,7,-6,3,-4,,  ,
+,5,5,0,-1
+Output9:
+-6
+-4
+-1
+0
+2
+3
+5
+5
+7
+8
+9
+---------------------------------------------------------------
+Test10: ./a.out -q ./foo.txt
+foo.txt: aaaaaaa,aaaa,aaa,a,aa
+Output10: 
+a
+aa
+aaa
+aaaa
+aaaaaaa
+---------------------------------------------------------------
+
